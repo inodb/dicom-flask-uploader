@@ -1,5 +1,14 @@
-<form method=POST enctype=multipart/form-data action="{{ url_for('bp.upload') }}">
-    Upload DICOM image, please<br />
-    <input type=file name=photo><br />
-    <input type="submit" value="Submit">
-</form>
+{% extends "base.html" %}
+{% block content %}
+<div class="row">
+    <div class="col-md-4 col-md-offset-4">
+        <form method=POST class="form-inline" enctype=multipart/form-data action="{{ url_for('bp.upload') }}">
+            <div class="form-group">
+                <label for="inputFile">DICOM image</label>
+                <input id="inputFile" type=file  name=photo><br />
+                <input class="btn btn-default" type="submit" value="Submit">
+            </div>
+        </form>
+    </div>
+</div>
+{% endblock %}

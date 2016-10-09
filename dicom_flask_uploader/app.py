@@ -8,6 +8,7 @@ from flask_bootstrap import Bootstrap
 import os
 from models import db, Photo, uploaded_photos
 from views import bp
+from navbar import nav
 
 
 # init app
@@ -23,6 +24,7 @@ def create_app():
     })
     app.config.from_envvar('PHOTOLOG_SETTINGS', silent=True)
     Bootstrap(app)
+    nav.init_app(app)
     db.init_app(app)
     configure_uploads(app, uploaded_photos)
     # add views

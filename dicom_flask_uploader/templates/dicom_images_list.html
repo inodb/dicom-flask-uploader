@@ -1,3 +1,10 @@
-{% for photo in photos %}
-<img src="{{ photo.thumbnail_url }}" /><a href="{{ url_for('bp.show', id=photo.id) }}" >{{ photo.filename }}</a><br />
-{% endfor %}
+{% extends "base.html" %}
+{% block content %}
+<div class="row">
+    <div class="col-md-6 col-md-offset-3 text-center">
+        {% for photo in photos %}
+        <img src="{{ photo.thumbnail_url }}" class="center-block" /><a href="{{ url_for('bp.show', id=photo.id) }}" >{{ photo.filename }}</a><br />
+        {% endfor %}
+    </div>
+</div>
+{% endblock %}

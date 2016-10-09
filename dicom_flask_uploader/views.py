@@ -40,4 +40,4 @@ def show_photos():
 
 @bp.route('/')
 def show_dicom_images():
-    return 'Hello, World!'
+    return render_template('index.html')
