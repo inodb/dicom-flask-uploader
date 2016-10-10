@@ -1,6 +1,7 @@
 import pytest
 from flask import url_for
 from dicom_flask_uploader.app import create_app
+from dicom_flask_uploader.app import db
 from StringIO import StringIO
 import os
 import py

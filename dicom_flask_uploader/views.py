@@ -3,7 +3,7 @@ from flask import Blueprint
 from models import db, uploaded_photos, Photo
 from flask import request, session, render_template, url_for, redirect, \
     flash, send_from_directory
-from dicom_handler import create_thumbnail_mudicom
+from dicom_handler import create_thumbnail
 
 bp = Blueprint('bp', __name__, template_folder='templates')
 
@@ -14,7 +14,7 @@ def upload():
         filename = uploaded_photos.save(request.files['photo'])
         fp = uploaded_photos.path(filename)
         thumbnail_fp = fp.replace('.dcm', '.thumb.jpeg')
-        create_thumbnail_mudicom(str(fp), str(thumbnail_fp))
+        create_thumbnail(str(fp), str(thumbnail_fp))
         user = flask.g.get('user', None)
         rec = Photo(filename=filename)
         db.session.add(rec)
