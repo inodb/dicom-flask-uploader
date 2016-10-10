@@ -1,5 +1,6 @@
 [![Build Status](https://travis-ci.org/inodb/dicom-flask-uploader.svg?branch=master)](https://travis-ci.org/inodb/dicom-flask-uploader)
 [![codecov](https://codecov.io/gh/inodb/dicom-flask-uploader/branch/master/graph/badge.svg)](https://codecov.io/gh/inodb/dicom-flask-uploader)
+[![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy)
 # dicom-flask-uploader
 Python Web Server in Flask that allows users to upload & browse
 [DICOM](https://en.wikipedia.org/wiki/DICOM) images.

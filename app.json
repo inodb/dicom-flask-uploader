@@ -1,0 +1,29 @@
+{
+    "name": "dicom_flask_uploader",
+    "description": "DICOM image uploader in flask",
+    "repository": "https://github.com/inodb/dicom-flask-uploader",
+    "keywords": [
+        "python",
+        "flask",
+        "dicom"
+    ],
+    "env": {
+       "FLASK_APP": {
+            "description": "flask app run module",
+            "value": "dicom_flask_uploader.runapp"
+        },
+        "CONDA_CHANNELS": {
+            "description": "conda channels to include for buildpack",
+            "value": "conda-forge"
+        },
+        "CONDA_REQ_FILE": {
+            "description": "conda requirements file",
+            "value": "requirements/conda.txt"
+        }
+    },
+    "buildpacks": [
+        {
+            "url": "https://github.com/inodb/conda-buildpack"
+        }    
+    ]
+}
