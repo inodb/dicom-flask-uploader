@@ -55,12 +55,12 @@ py.test
 - Use that lovely
   [flask-resty-tenants](https://github.com/4Catalyzer/flask-resty-tenants)
 library to create REST API
-- Add authentication on a per user basis
+- Add authentication
 - Store static files in a persistent manner using
   [flask-annex](https://github.com/4Catalyzer/flask-annex) 
 - Seems like some thumbnails are not always properly converted, probably issue
   in mudicom or gdcm
-- Add some better error checking (for uploading incorrect image type for
+- Add  better error checking (for uploading incorrect image type for
   instance)
 - Validate DICOM files and show info to user
 - Query DICOM key/value
