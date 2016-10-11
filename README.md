@@ -9,7 +9,12 @@ Python Web Server in Flask that allows users to upload & browse
 the DICOM files. The [pillow](https://github.com/python-pillow/Pillow) library
 is used to make the thumbnail.
 
-See an example running at: [http://dicom-flask-uploader.herokuapp.com/](http://dicom-flask-uploader.herokuapp.com/)
+See an example running at:
+
+[![DICOM GIF](dicom_flask_uploader/static/home_img.gif)](http://dicom-flask-uploader.herokuapp.com/)
+
+[http://dicom-flask-uploader.herokuapp.com/](http://dicom-flask-uploader.herokuapp.com/)
+
 
 ## How to run
 ### Using conda + pip
