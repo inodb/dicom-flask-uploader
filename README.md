@@ -9,6 +9,8 @@ Python Web Server in Flask that allows users to upload & browse
 the DICOM files. The [pillow](https://github.com/python-pillow/Pillow) library
 is used to make the thumbnail.
 
+See an example running at: [http://dicom-flask-uploader.herokuapp.com/](http://dicom-flask-uploader.herokuapp.com/)
+
 ## How to run
 ### Using conda + pip
 To Deploy, install the dependencies
@@ -43,8 +45,11 @@ py.test
     - Might actually be better to use nosql db for this, since key/values can
       be different between DICOMs
 - Use gdcm so compressed DICOM images can be handled
+    - There was a conda binary already available, so was easy to use that. Saw there were some Dockerfile images available as well
+- Storing thumbnails/dcm on `/tmp/` so I don't get charged for uploading/storing files
+  - For persistent storage on Heroku, could've also stored them in the db but that is generally considered bad practice
 - Using Jinja2 templating with flask for quick prototyping
-- A few tests to show system works
+- A few tests to show system works, no reason to test a prototype super thoroughly
 
 ## Further Ideas
 - Use that lovely
