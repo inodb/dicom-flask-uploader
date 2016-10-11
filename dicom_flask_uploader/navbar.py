@@ -6,7 +6,7 @@ nav = Nav()
 @nav.navigation()
 def mynavbar():
     return Navbar(
-        View('DICOM Uploader', 'bp.show_dicom_images'),
-		View('Browse', 'bp.show_photos'),
-		View('Upload', 'bp.upload'),
+        View('Dicom Uploader', 'bp.show_dicom_dicoms'),
+        View('Browse', 'bp.show_dicoms'),
+        View('Upload', 'bp.upload'),
     )

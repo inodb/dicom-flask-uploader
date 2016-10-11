@@ -4,8 +4,8 @@
     <div class="col-md-4 col-md-offset-4">
         <form method=POST class="form-inline" enctype=multipart/form-data action="{{ url_for('bp.upload') }}">
             <div class="form-group">
-                <label for="inputFile">DICOM image</label>
-                <input id="inputFile" type=file  name=photo><br />
+                <label for="inputFile">Upload DICOM image (<a href="http://www.osirix-viewer.com/resources/dicom-image-library/">example DICOMs</a>)</label>
+                <input id="inputFile" type=file  name=dicom><br />
                 <input class="btn btn-default" type="submit" value="Submit">
             </div>
         </form>

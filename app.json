@@ -2,6 +2,7 @@
     "name": "dicom_flask_uploader",
     "description": "DICOM image uploader in flask",
     "repository": "https://github.com/inodb/dicom-flask-uploader",
+    "logo":"http://ino.pm/share/dicom_flask_uploader_logo.jpeg",
     "keywords": [
         "python",
         "flask",
@@ -19,6 +20,10 @@
         "CONDA_REQ_FILE": {
             "description": "conda requirements file",
             "value": "requirements/conda.txt"
+        },
+        "EXAMPLE_OSIRIX_ZIP_URL": {
+            "description": "Initialize db with OSIRIX example set, pick from http://www.osirix-viewer.com/resources/dicom-image-library/",
+            "value": "http://www.osirix-viewer.com/datasets/DATA/BEAUFIX.zip"
         }
     },
     "buildpacks": [

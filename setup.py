@@ -25,7 +25,7 @@ def system(command):
 setup(
     name='dicom-flask-uploader',
     version='0.1.0',
-    description="DICOM image uploader in flask",
+    description="Dicom dicom uploader in flask",
     url='https://github.com/inodb/dicom-flask-uploader',
     author="Ino de Bruijn",
     author_email='ino@ino.pm',

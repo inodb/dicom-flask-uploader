@@ -1,22 +1,15 @@
-import flask
 from flask import Blueprint
-from models import db, uploaded_photos, Photo
-from flask import request, session, render_template, url_for, redirect, \
-    flash, send_from_directory
-from dicom_handler import create_thumbnail
+from models import db, uploaded_dicoms, Dicom
+from flask import request, render_template, url_for, redirect, flash, abort
 
 bp = Blueprint('bp', __name__, template_folder='templates')
 
 
 @bp.route('/upload', methods=['GET', 'POST'])
 def upload():
-    if request.method == 'POST' and 'photo' in request.files:
-        filename = uploaded_photos.save(request.files['photo'])
-        fp = uploaded_photos.path(filename)
-        thumbnail_fp = fp.replace('.dcm', '.thumb.jpeg')
-        create_thumbnail(str(fp), str(thumbnail_fp))
-        user = flask.g.get('user', None)
-        rec = Photo(filename=filename)
+    if request.method == 'POST' and 'dicom' in request.files:
+        filename = uploaded_dicoms.save(request.files['dicom'])
+        rec = Dicom(filename=filename)
         db.session.add(rec)
         db.session.commit()
         flash("Upload success!")
@@ -24,20 +17,22 @@ def upload():
     return render_template('upload.html')
 
 
-@bp.route('/photo/<id>')
+@bp.route('/dicom/<id>')
 def show(id):
-    photo = Photo.query.get(id)
-    if photo is None:
+    dicom = Dicom.query.get(id)
+    if dicom is None:
         abort(404)
-    return render_template('show.html', photo=photo)
+    return render_template('dicom.html', dicom=dicom)
 
 
-@bp.route('/photos')
-def show_photos():
-    photos = Photo.query.all()
-    return render_template('dicom_images_list.html', photos=photos)
+@bp.route('/dicoms')
+@bp.route('/dicoms/<int:page>')
+def show_dicoms(page=1):
+    DicomS_PER_PAGE = 25
+    dicoms = Dicom.query.paginate(page, DicomS_PER_PAGE, False)
+    return render_template('dicoms.html', dicoms=dicoms)
 
 
 @bp.route('/')
-def show_dicom_images():
+def show_dicom_dicoms():
     return render_template('index.html')

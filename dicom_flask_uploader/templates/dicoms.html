@@ -1,0 +1,24 @@
+{% from "bootstrap/pagination.html" import render_pagination %}
+{% extends "base.html" %}
+{% block content %}
+<div class="row">
+    <div class="col-md-6 col-md-offset-3">
+        <br />
+            {% for dicom in dicoms.items %}
+            <div style="display: inline-block; padding: 20px;" >
+                <a href="{{ url_for('bp.show', id=dicom.id) }}" >
+                    <img width=128 height=128 src="{{ dicom.thumbnail_url }}"
+                    class="center-block" />
+                </a>
+            </div>
+            {% else %}
+            No DICOMs to show.
+            {% endfor %}
+        </div>
+    </div>
+</div>
+<div class="text-center">
+{{ render_pagination(dicoms) }}
+</div>
+{% endblock %}
+

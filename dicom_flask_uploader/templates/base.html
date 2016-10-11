@@ -1,5 +1,9 @@
 {% extends "bootstrap/base.html" %}
-{% block title %}DICOM Flask Uploader{% endblock %}
+{% block title %}Dicom Flask Uploader{% endblock %}
+{% block head %}
+{{ super() }}
+<link rel="shortcut icon" href="{{ url_for('static', filename='ico/favicon.ico') }}" />
+{% endblock %}
 
 {% block navbar %}
 {{nav.mynavbar.render()}}

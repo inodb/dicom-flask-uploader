@@ -1,8 +1,11 @@
 {% extends "base.html" %}
 {% block content %}
 <div class="row">
+    <div class="col-md-6 col-md-offset-3 text-center">
+        <img class="img-responsive center-block" src="{{ dicom.thumbnail_url }}" /><br />
+        <a href="{{ dicom.filename_url }}">Download</a><br /><br />
+    </div>
     <div class="col-md-6 col-md-offset-3">
-        <img class="img-responsive center-block" src="{{ photo.thumbnail_url }}" /><br />
         <table class="table">
             <thead>
                 <tr>
@@ -12,7 +15,7 @@
                 </tr>
             </thead>
             <tbody>
-        {% for data_element in photo.data_elements %}
+        {% for data_element in dicom.data_elements %}
             <tr>
                 <th scope="row">{{ loop.index }}</th>
                 <td>{{ data_element.name }}</td>
