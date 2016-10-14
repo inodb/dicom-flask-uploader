@@ -29,7 +29,7 @@ pip install -e .
 ```
 Then run
 ```bash
-export FLASK_APP=dicom-flask-uploader.runapp
+export FLASK_APP=dicom_flask_uploader.runapp
 flask initdb
 flask importdb
 flask run
