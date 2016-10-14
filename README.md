@@ -58,7 +58,7 @@ py.test
 
 ## Further Ideas
 - Use that lovely
-  [flask-resty-tenants](https://github.com/4Catalyzer/flask-resty-tenants)
+  [flask-resty](https://github.com/4Catalyzer/flask-resty)
 library to create REST API
 - Add authentication
 - Store static files in a persistent manner using
